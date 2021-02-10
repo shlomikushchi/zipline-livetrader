@@ -1,4 +1,5 @@
 from .equity_pricing import EquityPricing, USEquityPricing
+from .tiingo_fundamentals import TiingoFundamentals, TiingoFundamentalsUS
 from .dataset import (
     BoundColumn,
     Column,
@@ -15,4 +16,6 @@ __all__ = [
     'DataSetFamily',
     'DataSetFamilySlice',
     'USEquityPricing',
+    'TiingoFundamentals',
+    'TiingoFundamentalsUS',
 ]

@@ -252,7 +252,7 @@ cpdef _read_tape_data(dict table,
                        intp_t[:] first_rows,
                        intp_t[:] last_rows,
                        intp_t[:] offsets,
-                       bool read_all):
+                       bool read_all) -> object:
     """
     Load raw dict data for the given columns and indices.
     basically, slice the desired data from a dict of arrays. 

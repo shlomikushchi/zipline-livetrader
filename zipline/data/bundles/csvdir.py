@@ -108,7 +108,8 @@ def csvdir_bundle(environ,
                   show_progress,
                   output_dir,
                   tframes=None,
-                  csvdir=None):
+                  csvdir=None,
+                  fundamentals_writer=None):
     """
     Build a zipline data bundle from the directory with csv files.
     """

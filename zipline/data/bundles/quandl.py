@@ -189,7 +189,8 @@ def quandl_bundle(environ,
                   end_session,
                   cache,
                   show_progress,
-                  output_dir):
+                  output_dir,
+                  fundamentals_writer=None):
     """
     quandl_bundle builds a daily dataset using Quandl's WIKI Prices dataset.
 

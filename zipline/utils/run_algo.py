@@ -27,7 +27,7 @@ from zipline.data.data_portal import DataPortal
 from zipline.data.data_portal_live import DataPortalLive
 from zipline.finance import metrics
 from zipline.finance.trading import SimulationParameters
-from zipline.pipeline.data import USEquityPricing
+from zipline.pipeline.data import USEquityPricing, TiingoFundamentalsUS
 from zipline.pipeline.loaders import USEquityPricingLoader
 
 import zipline.utils.paths as pth
@@ -214,9 +214,13 @@ def _run(handle_data,
 
     def choose_loader(column):
         # TODO Domain bypass
-        return pipeline_loader
+        # default pricing-columns
         if column in USEquityPricing.columns:
             return pipeline_loader
+        # tiingo-fundamentals-columns
+        elif bundle_data.fundamentals_loader and column in TiingoFundamentalsUS.columns:
+            return bundle_data.fundamentals_loader
+
         raise ValueError(
             "No PipelineLoader registered for column %s." % column
         )

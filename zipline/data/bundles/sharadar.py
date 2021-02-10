@@ -42,7 +42,8 @@ def sharadar_prices_bundle(environ,
                            end_session,
                            cache,
                            show_progress,
-                           output_dir):
+                           output_dir,
+                           fundamentals_writer=False):
     api_key = environ.get('QUANDL_API_KEY')
     if api_key is None:
         raise ValueError(
